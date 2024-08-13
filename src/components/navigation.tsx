@@ -3,11 +3,12 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {useState} from "react";
+import styles from "../styles/navigation.module.css";
 
 export default function Navigation() {
     const path = usePathname();
     return (
-        <navi>
+        <nav className={styles.nav}>
             <ul>
                 <li>
                     <Link href={"/"}>Home {path === "/" ? "✌️": ""}</Link>
@@ -16,6 +17,6 @@ export default function Navigation() {
                     <Link href={"/about-us"}>About {path === "/about-us" ? "✌️" : ""}</Link>
                 </li>
             </ul>
-        </navi>
+        </nav>
     );
 }
