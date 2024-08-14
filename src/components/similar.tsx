@@ -1,5 +1,5 @@
-import {API_URL} from "@/app/(home)/page";
 import styles from "@/styles/similar.module.css";
+import {API_URL} from "@/app/constants";
 
 async function getSimilar(id:string){
     //await new Promise((re) => setTimeout(re,4000));

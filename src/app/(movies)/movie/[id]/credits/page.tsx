@@ -1,7 +1,7 @@
 import styles from "@/styles/credits.module.css";
-import {API_URL} from "@/app/(home)/page";
 import Credit from "@/components/credit";
 import Link from "next/link";
+import {API_URL} from "@/app/constants";
 
 async function getCredits(id : string){
     const detail_url = `${API_URL}/${id}/credits`;
@@ -11,7 +11,7 @@ async function getCredits(id : string){
 
 }
 
-export default async function Credits({params: {id}}:{param: {id: string}})
+export default async function Credits({params: {id}}:{params: {id: string}})
 {
     const credits = await getCredits(id);
 

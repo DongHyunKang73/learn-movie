@@ -1,7 +1,7 @@
 import styles from "@/styles/credits.module.css";
-import {API_URL} from "@/app/(home)/page";
 import Credit from "@/components/credit";
 import Link from "next/link";
+import {API_URL} from "@/app/constants";
 
 async function getCredits(id : string){
     const detail_url = `${API_URL}/${id}/credits`;
@@ -25,7 +25,7 @@ export default async function Credits({id, max_cnt} : {id : string, max_cnt : nu
                     display++;
 
                     if(display === max_cnt)
-                        return <Link href={`/movie/${id}/credits`}>&rarr;</Link>;
+                        return <Link key={"1"} href={`/movie/${id}/credits`}>&rarr;</Link>;
                     else if(display < max_cnt)
                         return <Credit key={credit.id} name={credit.name} img_url={credit.profile_path} />;
                     else
