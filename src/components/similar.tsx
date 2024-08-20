@@ -20,7 +20,7 @@ export default async function Similar ({id} : {id:string}) {
                 <h1>추천작</h1>
             </div>
             <div className={styles.container}>
-                {similars.map((similar) => (
+                {similars.map((similar : {id:string, poster_path:string, original_title:string}) => (
                     <img
                         key={similar.id}
                         src={similar.poster_path}

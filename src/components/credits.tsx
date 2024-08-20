@@ -21,7 +21,7 @@ export default async function Credits({id, max_cnt} : {id : string, max_cnt : nu
                 <h1>출연진 정보</h1>
             </div>
             <div className={styles.container_flex}>
-                {credits.map((credit) => {
+                {credits.map((credit : {id:string, name : string, profile_path : string}) => {
                     display++;
 
                     if(display === max_cnt)

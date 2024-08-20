@@ -30,12 +30,12 @@ export default async function MovieInfo({id} : {id:string}) {
                 <p className={styles.info}>{movie.overview}</p>
                 <a href={movie.homepage} target={"_blank"}>Homepage &rarr;</a>
                 <div className={styles.company}>
-                    {movie.production_companies.map((company) => (
+                    {movie.production_companies.map((company : {id:string, logo_path:string, name:string}) => (
                         <img className={styles.company_logo}
                              key={company.id}
                              src={company.logo_path}
                              alt={company.name}
-                             onerror="this.style.display='none'" />
+                        />
                     ))}
                 </div>
                 <div>
@@ -43,7 +43,7 @@ export default async function MovieInfo({id} : {id:string}) {
                 </div>
                 <div className={styles.provider}>
                     {
-                        providers.KR.rent.map((rent) => (
+                        providers.KR.rent.map((rent : {provider_id : string, logo_path:string, provider_name:string}) => (
                         <img
                             key={rent.provider_id}
                             src={rent.logo_path}
@@ -57,7 +57,7 @@ export default async function MovieInfo({id} : {id:string}) {
                 </div>
                 <div className={styles.provider}>
                     {
-                        providers.KR.buy.map((buy) => (
+                        providers.KR.buy.map((buy : {provider_id:string, logo_path:string, provider_name:string}) => (
                             <img
                                 key={buy.provider_id}
                                 src={buy.logo_path}

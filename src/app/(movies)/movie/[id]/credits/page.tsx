@@ -21,7 +21,7 @@ export default async function Credits({params: {id}}:{params: {id: string}})
                 <h1>출연진 정보</h1>
             </div>
             <div className={styles.container_grid}>
-                {credits.map((credit) => (
+                {credits.map((credit : {id:string, name:string, profile_path:string}) => (
                     <Credit key={credit.id} name={credit.name} img_url={credit.profile_path} />
                 ))}
             </div>

@@ -16,7 +16,7 @@ export default async function HomePage() {
     const movies = await getMovies();
     return (
         <div className={styles.container}>
-            {movies.map((movie) => (
+            {movies.map((movie : {id:string, title:string, poster_path:string}) => (
                 <Movie
                     key={movie.id}
                     id={movie.id}
